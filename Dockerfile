@@ -13,9 +13,9 @@ RUN npm install -g --production node-gyp && \
 
 # Install Gekko dependencies
 COPY package.json .
-RUN npm install --production && \
-    npm install --production talib@1.0.2 tulind@0.8.7 pg && \
-    npm cache clean --force
+RUN npm install --production
+RUN npm install --production redis@0.10.0 talib@1.0.2 tulind@0.8.7 pg
+RUN npm cache clean --force
 
 # Install Gekko Broker dependencies
 WORKDIR exchange
